@@ -1,5 +1,7 @@
 # Kiatemy CRM
 
+[![Build Status](https://travis-ci.org/bayborodin/kiatemy.svg?branch=master)](https://travis-ci.org/bayborodin/kiatemy)
+
 Open source CRM built with Django and React.
 
 **Disclaimer**: the project is sooo pre-alpha.
