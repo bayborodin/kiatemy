@@ -17,3 +17,6 @@ COPY ./entrypoint.sh /usr/src/api/entrypoint.sh
 COPY . /usr/src/api
 
 ENTRYPOINT [ "/usr/src/api/entrypoint.sh" ]
+
+RUN adduser -D user
+USER user
