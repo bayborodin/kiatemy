@@ -7,7 +7,9 @@ class Modeltests(TestCase):
         """Test creating a new user with an email is successful"""
         email = "test@kiatemy.local"
         password = "Testpass123"
-        user = get_user_model().objects.create_user(email=email, password=password)
+        user = get_user_model().objects.create_user(
+            email=email,
+            password=password)
 
         self.assertEquals(user.email, email)
         self.assertTrue(user.check_password(password))
@@ -18,3 +20,17 @@ class Modeltests(TestCase):
         user = get_user_model().objects.create_user(email, "test123")
 
         self.assertEquals(user.email, email.lower())
+
+    def test_new_user_invalid_email(self):
+        """Test creating user with no email raises error"""
+        with self.assertRaises(ValueError):
+            get_user_model().objects.create_user(None, "test123")
+
+    def test_create_new_superuse(self):
+        """Test creating new superuser"""
+        user = get_user_model().objects.create_superuser(
+            "test@kiatemy.local", "test123"
+        )
+
+        self.assertTrue(user.is_superuser)
+        self.assertTrue(user.is_staff)
