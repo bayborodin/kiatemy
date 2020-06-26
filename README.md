@@ -10,6 +10,7 @@ Open source CRM built with Django and React.
 
 Our ambitious goal is to create the CRM of dreams that will combine all the advanced ideas in the field of customer relationship management along with the basic principles of open source software.
 
+
 ## Contributing
 
 We would love you to contribute to our project. It's simple:
@@ -18,3 +19,13 @@ We would love you to contribute to our project. It's simple:
 2. Create a pull request. Make shure all checks are green.
 3. Fix review comments if any.
 4. Be awesome.
+
+### Useful commands for develop purpose
+* Make migrations:
+```sh
+docker-compose run backend sh -c "python manage.py makemigrations"
+```
+* Run tests:
+```sh
+docker-compose run backend sh -c "python manage.py test && flake8"
+```
