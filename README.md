@@ -20,7 +20,7 @@ We would love you to contribute to our project. It's simple:
 3. Fix review comments if any.
 4. Be awesome.
 
-### Useful commands for develop purpose
+### Useful commands for dev purpose
 * Make migrations:
 ```sh
 docker-compose run backend sh -c "python manage.py makemigrations"
